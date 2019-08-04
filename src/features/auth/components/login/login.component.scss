@@ -138,6 +138,11 @@
   }
   
   @media only screen and (max-width: 480px) {
+
+    .skeleton-container {
+      padding: 8px;
+    }
+
     .skeleton-content-header {
       --title-size: 70% 40px;
       --stitle-size: 75% 25px;
