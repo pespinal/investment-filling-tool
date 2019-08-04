@@ -1,0 +1,1 @@
+.modal-overlay{z-index:1000;position:fixed;top:0;left:0;height:100%}.background-img,.modal-overlay{width:100%}.background-img{position:absolute;overflow:hidden;picture{max-height:50%;height:50%}&:after{content:"";display:block;width:110%;height:30%;position:absolute;top:100%;left:0;background-color:#fff;transform:rotate(-3.6deg);transform-origin:left top}}
