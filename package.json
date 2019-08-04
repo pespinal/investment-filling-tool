@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href 'https://pespinal.github.io/investment-filling-tool/'"
+    "deploy": "ng build --prod --base-href 'https://pespinal.github.io/investment-filling-tool/'; ngh"
   },
   "private": true,
   "dependencies": {
