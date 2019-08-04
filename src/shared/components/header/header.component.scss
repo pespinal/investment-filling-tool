@@ -23,9 +23,9 @@
   }
 
   @media(max-width: 480px) {
-/*     .logo-desktop {
-      display: none;
-    } */
+    .logo-desktop {
+      top: -42%;
+    }
 
     .logo-mobile {
       display: block;
