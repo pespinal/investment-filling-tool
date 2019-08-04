@@ -9,11 +9,11 @@ import { SingleFormComponent } from 'cob-ui-components'; */
 /* import { PersonalDataHandler } from '../../handler/login.handler'; */
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss'],
+  selector: 'app-formulate-form',
+  templateUrl: './formulate-form.component.html',
+  styleUrls: ['./formulate-form.component.scss'],
 })
-export class LandingComponent {
+export class FormulateFormComponent {
   public errorMessages: any = {};
 
   constructor(
@@ -29,8 +29,9 @@ export class LandingComponent {
     //this.createForm();
   }
 
-  public goForm() {
-    this.router.navigate(['/form1']);
+  public goHome() {
+    console.log('aqui');
+    this.router.navigate(['/home']);
   }
 
  /* ngOnInit() { } */

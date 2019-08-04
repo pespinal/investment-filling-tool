@@ -38,7 +38,6 @@ export class LoginComponent {
   }
 
   public goHome() {
-    console.log('aqui');
     this.router.navigate(['/home']);
   }
 
