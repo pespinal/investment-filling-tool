@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,11 @@ import { Event, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  public isSignedIn: boolean;
+  constructor(
+    private router: Router,
+    private afAuth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
     this.router.events.subscribe((event: Event) => {
@@ -18,9 +23,22 @@ export class HeaderComponent implements OnInit {
         };
       }
     });
+    this.afAuth.authState.subscribe(state => {
+    console.log("TCL: HeaderComponent -> ngOnInit -> state", state)
+      this.isSignedIn = !!state;
+      console.log("TCL: HeaderComponent -> ngOnInit -> this.isSignedIn", this.isSignedIn)
+      if (!this.isSignedIn) {
+        this.goHome();
+      }
+    });
   }
 
   goHome() {
     this.router.navigate(['/'])
   }
+
+  signOut() {
+    return this.afAuth.auth.signOut();
+  }
+
 }

@@ -1,12 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-/* import { TranslateService } from '@ngx-translate/core';
-import { RoutesPaths } from '@shared/domain/routes-paths';
-import { CommonValidators } from '@shared/validators/common.validator';
-import { SessionStorageHandler } from 'cob-infrastructure';
-import { SingleFormComponent } from 'cob-ui-components'; */
-/* import { PersonalDataHandler } from '../../handler/login.handler'; */
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +24,7 @@ export class LoginComponent {
     private formBuilder: FormBuilder,
     /* private componentHandler: PersonalDataHandler, */
     public router: Router,
+    private angularFireAuth: AngularFireAuth
     /* public form: FormGroup, */
     /* private sessionStorageHandler: SessionStorageHandler,
     private translateService: TranslateService */
@@ -39,6 +36,15 @@ export class LoginComponent {
 
   public goHome() {
     this.router.navigate(['/home']);
+  }
+
+  public signInWithGoogle() {
+    this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
+    .then((user) => {
+      console.log(user);
+      this.goHome();
+    })    
+    .catch(console.log)
   }
 
  /* ngOnInit() { } */

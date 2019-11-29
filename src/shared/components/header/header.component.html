@@ -1,5 +1,7 @@
 <div id="header" class="header">
   <!-- <img src="assets/img/logo-banco-mobile.svg" onerror="this.src='assets/img/logo_banco.png'" class="logo-mobile only-mobile" alt="logo mobile" />
   <img src="assets/img/logo-banco-falabella.svg" onerror="this.src='assets/img/logo-banco-falabella.png'" class="logo-desktop only-desktop" alt="logo desktop" /> -->
+  <div><button (click)="signOut()" *ngIf="isSignedIn">Cerrar sesión</button></div>
   <img (click)="goHome()" width="100" class="logo-desktop" src="assets/img/icon.png">
+  
 </div>
